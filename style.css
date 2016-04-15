@@ -1,0 +1,258 @@
+/*
+Theme Name:     Customizr Child
+Theme URI:      http://www.presscustomizr.com/customizr-pro
+Description:    A child theme for the Customizr WordPress theme. This child theme simply includes 2 files : style.css to add your custom css and functions.php where you can extend Customizr's core code. In order to keep your code as clean and flexible as possible, try to use Customizr's hooks API for your customizations. Do something awesome and have fun !
+Author:         Nicolas Guillaume (nikeo)
+Author URI:     http://themesandco.com
+Template:       customizr-pro
+Version:        1.0.0
+*/
+html,body{height:100%;color:#606c70;background:#f9f9f9;}
+.close, h1, h2, h3, h4, h5, h6{text-shadow:none;}
+p, a, ul, ol{font-size: 18px;}
+p {margin: 0 0 20px;}
+ul, ol {margin:0 0 20px 20px;list-style-position: inside;}
+li{margin: 0 0 10px}
+p{line-height:1.75;}
+h3{font-size:20px;font-weight:bold;margin:0;}
+strong{color:#462e25;}
+h1 strong{color:inherit;}
+ h1.entry-title{margin:0;}
+.orange {background:#e26b02;}
+.grey{background:#80898d;}
+.blueBorder{width:100%;border:0 none;border-bottom:10px solid #6dbace;}
+.blueBorder1{border-image:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/rightBlue.png') 100;}
+.blueBorder2{border-image:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/leftBlue.png') 100;}
+.blueBorder3{border-image:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/blueBorder3.png') 100;}
+.blueBorder4{border-image:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/blueBorder4.png') 100;}
+.clear{clear:both;}
+.featurette-divider{margin:0 0 30px;}
+input[type=submit], button[type=submit]{clear:both;display: block;border: 2px solid;color:#e26b02;font-weight:bold;font-size:18px;padding:0 5%;line-height: 45px; background:none;text-shadow:none;border-radius:0;text-transform:uppercase;min-width:130px;}
+input[type=submit]:hover, button[type=submit]:hover{background:#e26b02;color:#fff;}
+input[type=text]{max-width:200px;height:30px;border-radius: 0}
+input[type=submit]:after {content: "\f0da";}
+.members-access-error{margin: 0 0 50px;font-weight:bold;}
+#searchsubmit{font-family: FontAwesome, 'Source Sans Pro', Arial, sans-serif;}
+button.submit .fa {margin:0 0 0 10px;}
+.left{float:left;}
+.right{float: right;}
+/*HIDE POST LIST ON HOME PAGE*/
+.home .tc-post-list-grid{display: none}
+/*---------------------------------
+NOTIFACTION BAR
+-----------------------------------*/
+.attentionbar-announcement, .attentionbar-open-button-container{display:none !important;}
+.attentionbar-container{border: 0 none !important;}
+.attentionbar-close-button-container{float:right!important;}
+.attentionbar-close-button.long-arrow{background-image:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/closeIcon.png') !important;}
+.attentionbar-close-button-container{right:0;width:50px;}
+#dwpb, .dwpb-action{border:0 none;}
+.home.dwpb-push-page header{top:40px !important;}
+
+/*-------------------------------------------------------------
+HEADER
+-------------------------------------------------------------- */
+header.tc-header, .sticky-enabled .tc-header, .tc-solid-color-on-scroll.sticky-enabled .navbar-inner, .tc-solid-color-on-scroll.sticky-enabled .tc-header, .tc-sticky-header[class*=sn-] .tc-header, .tc-solid-color-on-scroll.sticky-enabled .tc-header{background:rgba(47,112,130,.6);border-bottom:0;}
+.tc-sticky-header #tc-reset-margin-top{margin: 0 !important;}
+.sticky-enabled .tc-tagline-off .btn-toggle-nav, .sticky-enabled .tc-header .navbar .navbar-inner{margin:0;}
+.tc-header .brand .site-logo img {max-width:150px;height:auto !important;}
+.navbar .btn-toggle-nav .icon-bar{background:#fff;}
+.navbar .nav>li>a{font-size:17px;}
+.row-fluid .navbar-wrapper {width: auto;float:none;margin:0;width:auto;position: absolute;top:40px;right:5%;}
+.row-fluid .brand.span3{width:200px;margin: 0 0 0 10%;}
+.navbar .navbar-inner{margin:0;}
+.btn-toggle-nav, .navbar .btn-toggle-nav .btn{margin:0;}
+.tc-sn-visible .btn-toggle-nav .icon-bar{background-color: inherit}
+.tc-sn-visible .btn-toggle-nav .icon-bar, .csstransforms .nav-collapse.in+.btn-toggle-nav .icon-bar, .csstransforms .tc-sn-visible .btn-toggle-nav .icon-bar{background: #394143}
+.tc-header .btn-toggle-nav.pull-right:before{content: "MENU";float:left;color:#fff;font-size:16px;margin: 0 10px 0 0;}
+.ctaWrap{line-height: 110px;box-sizing:border-box;}
+.ctaWrap.loggedIn{width:665px;float:right;margin: 0 15.5% 0 0;}
+.ctaWrap.loggedOut{float:right;width:200px;margin:0 7% 0 0;}
+.ctaBtn {width:200px;color:#fff;display: inline-block;border:3px solid #fff;line-height: 45px;text-align: center;font-size:18px; font-weight:bold;background-color: transparent;margin:0 20px 0 0;text-transform:uppercase;}
+.ctaBtn.last{margin:0;}
+.ctaBtn:hover{cursor: pointer;color:#2f7082;background-color: #fff;text-decoration: none;}
+.ctaBtn .fa{margin-left:10px;}
+#main-wrapper{margin-top:125px;}
+@media(max-width:1350px) {
+	.row-fluid .brand.span3{margin:0 0 0 5%;}
+	.row-fluid .navbar-wrapper{right:2%;}
+}
+@media(max-width:1225px) {
+	.row-fluid .brand.span3{margin:0 0 0 2.5%;}
+	.ctaWrap.loggedIn{margin:0 11% 0 0;}
+	.row-fluid .navbar-wrapper{right:0;}
+}
+@media(max-width:1023px){
+	.ctaWrap.loggedIn{margin:0 auto;clear:both;float:none;}
+	header.tc-header, .sticky-enabled .tc-header, .tc-solid-color-on-scroll.sticky-enabled .navbar-inner, .tc-solid-color-on-scroll.sticky-enabled .tc-header, .tc-sticky-header[class*=sn-] .tc-header, .tc-solid-color-on-scroll.sticky-enabled .tc-header {background:rgba(47,112,130,1);position: relative;top:0 !important;}
+}
+@media(max-width: 979px){
+	 .tc-header .navbar .btn-toggle-nav{margin:0 10px 0 0;}
+}
+@media(max-width:767px){
+	.ctaWrap.loggedIn{width:100%;padding: 0 5%;overflow: hidden;margin: 25px auto;}
+	.ctaWrap.loggedOut{margin:0 5% 0 0;}
+	.row-fluid .brand.span3{margin: 0 0 20px 5%;}
+	.ctaWrap.loggedIn .ctaBtn {width:30%;display: block;margin:0;float:left;}
+	.ctaWrap.loggedIn .ctaBtn:nth-child(2){margin:0 2.5%;}
+}
+@media(max-width:567px){
+	.ctaWrap.loggedOut{text-align: right;width:auto;}
+	.ctaWrap.loggedOut .ctaBtn{width:auto;padding: 0 20px}
+}
+@media(max-width:479px){
+	.row-fluid .navbar-wrapper{top:30px;}
+	.navbar .btn-navbar, .tc-header .navbar .btn-toggle-nav{margin:0;}
+	.tc-header .brand .site-logo img{max-width:120px;}
+	.ctaWrap{line-height:93px}
+	.row-fluid .brand.span3{float:left;width:auto;margin:0 0 0 5%;}
+	.ctaWrap.loggedOut .ctaBtn{margin:0}
+	.ctaWrap.loggedIn{width:auto;padding:0;text-align:center;margin:auto;}
+	.ctaWrap.loggedIn .ctaBtn{float:none;display: inline-block;padding:0 2%;width:auto;}
+	.ctaWrap .ctaBtn{font-size:15px;line-height:30px;}
+	.ctaBtn .fa{margin-left:2px;}
+}
+@media(max-width:350px){
+	.ctaWrap.loggedIn .ctaBtn{padding: 0 1%;}
+}
+/*-------------------------------------
+SUBNAV AND BREADCRUMBS
+---------------------------------------*/
+.breadcrumbs .sep{margin:0 5px;}
+.breadcrumbs a {font-size:13px;}
+.breadcrumbs .trail-end{font-weight:bold;font-size:13px;}
+#main-wrapper .tc-sidebar .widget li a  {font-size:14px;}
+/*-------------------------------------------
+HOME PAGE
+--------------------------------------------*/
+.home #main-wrapper {margin:auto;}
+.home #main-wrapper.container {width:100%;clear:both;padding:0;}
+.hero{width:100%;}
+.impact{margin:70px auto 50px;}
+.partners{margin:70px auto 0;}
+.partners, .mission p{max-width:960px;}
+.impact p, .impact ul{max-width:950px;margin: 0 auto;}
+.impact p, .mission p{margin: 0 auto 20px;}
+
+#my-content-header .tagline{clear:both;}
+#my-content-header .tagline h1{color:#fff;font-size: 28px;text-align: center;margin: 0;line-height: 1.2;padding:2% 0;}
+.mission {text-align:center;margin:70px auto;max-width:980px;}
+.mission strong {text-transform:uppercase;}
+.mission .entry-content {margin: 0 0 70px;}
+.callout {width:480px;background:#598d9b;overflow:hidden;box-sizing:border-box;}
+.callout.left{padding:0 15px 0 0;}
+.callout.left img{float:left;margin: 0 15px 0 0;}
+.callout.right {padding:0 0 0 15px;}
+.callout.right img{float:right;margin: 0 0 0 15px;}
+.callout h2, .callout p{color:#fff;}
+.callout h2{font-weight:bold;margin: 15px 0 5px;}
+
+.grey.headline h1{color:#fff;font-size:48px;text-align:center;line-height: 100px;margin:0;font-weight:bold;}
+.impact .fpc-container .fpc-row-fluid .fpc-span4{background:transparent;}
+.impact .fpc-row-fluid p{font-size:30px;color:#e26b02;text-align: center;line-height:1.3;}
+.impact .fpc-row-fluid p strong{color:inherit;}
+.impact .fpc-widget-front .thumb-wrapper:hover{cursor:default;}
+.partnersHero {background:url('http://caritas.charitydynamics.com/wp-content/uploads/2015/10/hero-partner.jpg') no-repeat scroll 0 0;background-size:cover;padding-bottom:53%;position:relative;}
+.partnerWrap{position: absolute;width: 30%;background:rgba(47,112,130,.6);bottom:0;right:10%;padding:35px;box-sizing:border-box;}
+.partnerWrap.mobile{display:none;}
+.partnerHeadline{color:#fff;}
+.partnerHeadline h2{font-size: 40px;font-weight:bold;}
+.partnerHeadline p{margin:0;font-size:24px;}
+.partnerHeadline strong{color:inherit;}
+.container .fpc-container{background:#f9f9f9 !important;}
+.partnerList .fpc-widget-front{padding: 0 3%; box-sizing:border-box;}
+.partnerList .fpc-widget-front img.v-centered{top:0!important;width:auto !important;left:0 !important;}
+.fpc-widget-front .thumb-wrapper{width:auto;height: auto !important;min-height:170px;}
+.partnerList .fpc-widget-front .thumb-wrapper{padding:30px 30px 0;}
+.fpc-widget-front .thumb-wrapper img{min-height: 0}
+.partnerList .fpc-widget-front .thumb-wrapper img{max-height:150px; width:auto;}
+.partnerList .fpc-container .fpc-row-fluid .fpc-span4{height: 425px;border-bottom:3px solid #6dbace;position: relative;background:#fff;width:31% !important;margin:0 0 0 3.5%;}
+.partnerList .fpc-row-fluid{margin: 0 0 50px !important;}
+.impact .fpc-container .fpc-row-fluid .fpc-span4{height:auto;border:0 none;}
+.partnerList .fpc-marketing .fpc-widget-front h2{margin: 0 0 20px;}
+.partnerList .fpc-widget-front p > a{position: absolute;bottom:25px;left:90px; width:190px;line-height: 45px !important; color:#e26b02;text-transform:uppercase;font-weight:bold;display: block !important;border: 3px solid;}
+.partnerList .fpc-widget-front p > a .fa{margin:0 0 0 10px;}
+.partnerList .fpc-widget-front p > a:hover{color:#fff;background:#e26b02;text-decoration: none;}
+.partnerList .fpc-container .fpc-row-fluid.last [class*=fpc-span]:first-child {margin:auto!important;float:none;}
+.partnerList .fpc-marketing .fpc-widget-front h2, .partnerList .fpc-widget-front > p{color:inherit !important;}
+.impact .fpc-widget-front .round-div{width:230px;height:230px;top:-10px;left:47px;border-radius: 50%;border:25px solid #f9f9f9 !important;cursor:default;}
+.impact .fpc-widget-front .thumb-wrapper img{border-radius:50%;border:20px solid #e26b02;background: #e26b02;max-width:220px !important;}
+.fpc-widget-front>p{margin:0;}
+.fpc-marketing{margin: 0}
+.partnerList .fpc-widget-front p > a .fa {margin: 0 0 0 10px;}
+.supportersWrap {width:auto;text-align:center;margin: 0 auto 50px;}
+.supportersWrap h3{margin: 0 0 20px;}
+.supporter{display: inline-block;max-width: 125px}
+
+@media(max-width:1200px){
+	.fpc-widget-front p > a{left:45px;}
+	.partnerHeadline p{font-size:20px;}
+	.impact .fpc-widget-front .round-div{left:10px;}
+	.partnerList .fpc-widget-front p > a{left:45px;}
+	.callout {float:none;clear:both;margin: 0 auto 20px}
+
+}
+@media(max-width:1023px){
+	.partnerWrap{padding:15px;right:0;width:40%;}
+	.mission, .impact, .partners{margin:35px auto 15px;}
+}	
+@media(max-width:979px){
+	.fpc-row-fluid .fpc-span12 .thumb-wrapper img{right: 0 !important; top: 0 !important;}
+	.impact .round-div{display: none}
+	.impact .fpc-widget-front .thumb-wrapper{margin-bottom:10px !important;}
+	.fpc-container .fpc-row-fluid .fpc-span12{margin-bottom:50px;}
+	.partnerList .fpc-container .fpc-row-fluid .fpc-span12{border-bottom: 3px solid #6dbace;margin: 0 auto 50px !important;max-width:400px;padding:0;height:auto;background-color: #fff;float:none;}
+	.partnerList .fpc-container .fpc-row-fluid.last [class*=fpc-span]:first-child{margin-bottom:50px !important;}
+	.fpc-container .fpc-row-fluid .fp-three{margin:0;}
+	.fpc-widget-front p > a{position: relative;margin:25px auto 50px;bottom:0;left:0;}
+	.fpc-marketing .fpc-widget-area{padding:0;margin: 0 !important;}
+	.fpc-container .fpc-row-fluid .fpc-span4{height: auto;border-bottom: 3px solid #6dbace;}
+	.fpc-widget-front .thumb-wrapper{min-height: 0}
+	.container .fpc-marketing .fpc-widget-front h2{margin:20px 0;}
+	.partnerList .fpc-widget-front p > a{position: static;display: block;margin:30px auto;}
+}
+@media(max-width:900px){
+	.partnerWrap.desk{display: none;}
+	.partnerWrap.mobile{display:block;width:100%;position: relative;padding:15px 5%;}
+}
+@media(max-width: 767px){
+	#my-content-header .tagline h1{font-size:24px;}
+	.mission, .impact, .partners{padding:0 2.5%;}
+	.mission{text-align:left;}
+}
+@media(max-width:567px){	
+	.partnerList .fpc-container .fpc-row-fluid .fpc-span12{width:280px;}
+	#my-content-header .tagline h1{font-size:20px;}
+	.mission .entry-content{margin: 0 0 35px;}
+	.callout{width:100%;}
+	.callout.right, .callout.left{padding:25px;}
+	.callout.right img, .callout.left img {display: none}
+}
+
+/*---------------------------------------
+INTERNAL PAGES
+-----------------------------------------*/
+#main-wrapper{background-color: #f9f9f9;margin: 150px auto 100px;}
+.widget_nav_menu .widget-title{display:none;}
+@media(max-width:1023px){
+	#main-wrapper{margin:20px auto 50px;}
+}
+/*------------------------------------------
+FORUM
+--------------------------------------------*/
+.bbp-breadcrumb{display: none;}
+#bbpress-forums #bbp-search-form #bbp_search{display: block;}
+/*-------------------------------------------
+FOOTER
+---------------------------------------------*/
+footer#footer{color:#fff;background:#462e25;padding:0;border:0;overflow:hidden;}
+#footer .social-block{display:none;}
+footer#footer .colophon{display: none}
+#footer_one.span4{width:100%;margin:0;}
+.footer-widgets{padding:0; margin:auto;}
+footer#footer a, footer#footer p{color:#fff;font-size:14px;font-weight:bold;text-align: left;margin: 0;line-height:100px;}
+footer .row{margin-left:0;}
+@media(max-width:979px){
+	footer#footer{padding:25px 4%;}
+	footer#footer a, footer#footer p{line-height: 2}
+}

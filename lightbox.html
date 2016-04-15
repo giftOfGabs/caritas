@@ -1,0 +1,18 @@
+<!-- Mission - Home Page -->
+
+<style>#inline1 img {float: right !important;} #fancybox-close {background: no-repeat transparent url('http://bestsinglesourceplus.org/wp-content/uploads/2016/03/lightbox_close.png') !important; top: -20px !important; right: 0 !important; width: 57px !important;} #fancybox-overlay {background-color: rgba(0, 0, 0, .5) !important;} #fancybox-outer {background: none !important;} #fancybox-content {border: none !important; float: right !important;} .fancybox-bg {background-image: none !important;}</style>
+
+<div id="inline1" style="display: none"><a href="http://bestsinglesourceplus.org/housing-resources/landlords/"><img src="http://bestsinglesourceplus.org/wp-content/uploads/2016/03/landlords_lightbox.png" alt="Learn More"></a></div>
+<a class="fancybox" href="#inline1"></a>
+
+<script>
+jQuery(document).ready(function() {
+    if (window.location.href.indexOf("charitydynamics") != -1 && !jQuery('body').hasClass('logged-in') ) {
+    	jQuery('#inline1').css('display', 'block');
+    	setTimeout(function(){
+			jQuery(".fancybox").fancybox({ padding: 0 });
+			jQuery(".fancybox").eq(0).trigger('click');
+	 	}, 500);
+    }
+});
+</script>
